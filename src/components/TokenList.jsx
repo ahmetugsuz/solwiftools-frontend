@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Keep this in case backend is reactivated later
 import '../styles/TokenList.css';
 import { toast } from 'react-hot-toast';
+import KlikkFixLogo from '../images/KF128x128.png';
 
 const TokenList = ({ walletAddress }) => {
     const [tokens, setTokens] = useState([]);
@@ -40,7 +41,7 @@ const TokenList = ({ walletAddress }) => {
                             freeze: false,
                             update: false
                         },
-                        imageUrl: "src/images/KF128x128.png"
+                        image: KlikkFixLogo
                         
                     },
                     {
@@ -202,9 +203,9 @@ const TokenList = ({ walletAddress }) => {
                                     </div>
                                 </div>
                                 <div className="token-card-right">
-                                    {token.imageUrl ? (
+                                    {token.image ? (
                                         <img 
-                                            src={token.imageUrl.startsWith('http') ? token.imageUrl : token.imageUrl}
+                                            src={token.image}
                                             alt={`${token.name} logo`}
                                             className="token-logo"
                                             onError={(e) => {
