@@ -7,7 +7,7 @@
     "build": "vite build",
     "start": "vite --port 5173",
     "preview": "vite preview",
-    "postinstall": "node patch-motion-utils.js"
+    "postinstall": "node patch-motion-utils.js && echo \"export default {};\" > node_modules/motion-utils/dist/es/globalThis-config.mjs"
   },
   "dependencies": {
     "@project-serum/anchor": "^0.26.0",
@@ -23,7 +23,7 @@
     "autoprefixer": "^10.4.20",
     "bs58": "^6.0.0",
     "buffer": "^6.0.3",
-    "framer-motion": "^12.4.7",
+    "framer-motion": "^11.3.21",
     "gsap": "^3.12.7",
     "jsonwebtoken": "^9.0.2",
     "motion-utils": "^12.23.6",
@@ -45,7 +45,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
-    "rollup-plugin-node-polyfills": "^0.2.1",
-    "vite": "^4.3.2"
+    "rollup-plugin-node-polyfills": "^0.2.1"
   }
 }
